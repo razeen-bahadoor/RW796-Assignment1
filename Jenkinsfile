@@ -29,6 +29,12 @@ pipeline {
             steps {
                 sh 'mvn clean package -DskipTests'
             }
+
+                post {
+                    always {
+                        archiveArtifacts artifacts: '/target/*.jar', onlyIfSuccessful: true
+                    }
+                }
         }
 
     }
