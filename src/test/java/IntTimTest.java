@@ -67,10 +67,10 @@ public class IntTimTest {
     /**
 //     * Failing test case
 //     */
-//    @Test
-//    public void fail1() {
-//        fail();
-//    }
+    @Test
+    public void fail1() {
+        fail();
+    }
 
 
 
