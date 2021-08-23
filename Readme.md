@@ -1,6 +1,6 @@
 # RW796-Assignment1
 
-[![Build Status](http://localhost:8080/buildStatus/icon?job=rw796-assignment1)](http://localhost:8080/job/rw796-assignment1/)
+[![Build Status](http://451b-146-232-108-171.ngrok.io/buildStatus/icon?job=rw796-assignment1)](http://localhost:8080/job/rw796-assignment1/)
 
 
 ## Contributing
