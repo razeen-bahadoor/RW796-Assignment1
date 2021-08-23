@@ -1,13 +1,12 @@
 void setBuildStatus(String message, String state) {
   step([
       $class: "GitHubCommitStatusSetter",
-      reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://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@github.com/razeen-bahadoor/RW796-Assignment1"],
+      reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/razeen-bahadoor/RW796-Assignment1"],
       contextSource: [$class: "ManuallyEnteredCommitContextSource", context: "ci/jenkins/build-status"],
       errorHandlers: [[$class: "ChangingBuildStatusErrorHandler", result: "UNSTABLE"]],
       statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]] ]
   ]);
 }
-
 
 pipeline {
 
@@ -29,14 +28,14 @@ pipeline {
                 steps {
                     sh 'mvn test'
                 }
-                 post {
-                       success {
-                           setBuildStatus("Build succeeded", "SUCCESS");
-                       }
-                       failure {
-                           setBuildStatus("Build failed", "FAILURE");
-                       }
-                   }
+               post {
+                  success {
+                      setBuildStatus("Build succeeded", "SUCCESS");
+                  }
+                  failure {
+                      setBuildStatus("Build failed", "FAILURE");
+                  }
+                }
         }
 
         stage('Deploy') {
