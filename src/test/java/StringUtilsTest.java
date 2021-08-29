@@ -72,6 +72,10 @@ public class StringUtilsTest {
         assertEquals("dlroW olleH", str1.reverse().toString());
     }
 
+//    @Test
+//    public void fail() {
+//        fail();
+//    }
 
 
 }
