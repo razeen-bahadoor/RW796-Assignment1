@@ -1,6 +1,6 @@
 # RW796-Assignment1
 
-[![Build Status](http://173b-146-232-108-171.ngrok.io/buildStatus/icon?job=rw796-assignment1)](http://173b-146-232-108-171.ngrok.io/job/rw796-assignment1/)
+[![Build Status](http://8e0a-146-232-108-171.ngrok.io/buildStatus/icon?job=rw796-assignment1)](http://173b-146-232-108-171.ngrok.io/job/rw796-assignment1/)
 
 
 ## Contributing
