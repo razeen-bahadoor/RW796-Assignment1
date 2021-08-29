@@ -73,7 +73,7 @@ public class StringUtilsTest {
     }
 
     @Test
-    public void fail() {
+    public void failTest() {
         fail();
     }
 
