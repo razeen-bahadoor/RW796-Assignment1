@@ -17,18 +17,19 @@ pipeline {
         stage('Test') {
                 steps {
                     sh 'mvn test'
+                    step([$class: 'JacocoPublisher',
+                          execPattern: 'target/*.exec',
+                          classPattern: 'target/classes',
+                          sourcePattern: 'src/main/java',
+                          exclusionPattern: 'src/test*'
+                    ])
                 }
                   post {
                         always {
                                       junit 'target/surefire-reports/**/*.xml'
                       }
                   }
-               step([$class: 'JacocoPublisher',
-                     execPattern: 'target/*.exec',
-                     classPattern: 'target/classes',
-                     sourcePattern: 'src/main/java',
-                     exclusionPattern: 'src/test*'
-               ])
+
 
         }
         stage('Deploy') {
