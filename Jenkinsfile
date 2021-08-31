@@ -30,7 +30,10 @@ pipeline {
                                                                 exclusionPattern: 'src/test*'
                                                           ])
 
-                                                          step([pitmutation killRatioMustImprove: false, minimumKillRatio: 50.0, mutationStatsFile: '**/target/pit-reports/**/mutations.xml'])
+                                                          step([$class: 'PitPublisher',
+                                                                 killRatioMustImprove: false,
+                                                                  minimumKillRatio: 50.0,
+                                                                   mutationStatsFile: '**/target/pit-reports/**/mutations.xml'])
 
                       }
                   }
