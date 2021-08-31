@@ -47,6 +47,52 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>1.6.9</version>
+                <configuration>
+                    <targetClasses>
+                        <param>StringUtils</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>StringUtilsTest</param>
+                    </targetTests>
+                    <mutators>
+                        <mutator>CONDITIONALS_BOUNDARY</mutator>
+                        <mutator>INCREMENTS</mutator>
+                        <mutator>INVERT_NEGS</mutator>
+                        <mutator>MATH</mutator>
+                        <mutator>NEGATE_CONDITIONALS</mutator>
+                        <mutator>RETURN_VALS</mutator>
+                        <mutator>VOID_METHOD_CALLS</mutator>
+                        <mutator>EMPTY_RETURNS</mutator>
+                        <mutator>FALSE_RETURNS</mutator>
+                        <mutator>TRUE_RETURNS</mutator>
+                        <mutator>NULL_RETURNS</mutator>
+                        <mutator>PRIMITIVE_RETURNS</mutator>
+                      <mutator>INLINE_CONSTS</mutator>
+                        <mutator>REMOVE_CONDITIONALS</mutator>
+                            <mutator>REMOVE_INCREMENTS</mutator>
+                        <mutator>CONSTRUCTOR_CALLS</mutator>
+                        <mutator>NON_VOID_METHOD_CALLS</mutator>
+                    </mutators>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>pit-report</id>
+                        <!-- optional, this example attached the goal into mvn test phase -->
+                        <phase>test</phase>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+
+            </plugin>
+
+
+            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.4 </version>

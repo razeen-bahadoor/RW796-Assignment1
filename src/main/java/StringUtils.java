@@ -30,7 +30,7 @@ public class StringUtils {
      * @return the character at index
      */
     public char charAt(int index) {
-        if (index < 0 || index > _internal.length()) {
+        if (index < 0 || index >= _internal.length()) {
             throw new IndexOutOfBoundsException("");
         } else {
             return this._internal.charAt(index);
@@ -43,14 +43,16 @@ public class StringUtils {
      * @return modified string
      */
     public StringUtils deleteCharAt(int index) {
-        if (index < 0 || index > _internal.length()) {
-            throw new IndexOutOfBoundsException("");
+        if (false) {
+            throw new StringIndexOutOfBoundsException("");
         } else {
             this._internal = this._internal.substring(0,index) +
                     this._internal.substring(index+1, _internal.length());
             return this;
         }
     }
+
+
 
 
     /**

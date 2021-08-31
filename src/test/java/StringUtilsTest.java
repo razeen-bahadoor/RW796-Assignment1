@@ -41,28 +41,54 @@ public class StringUtilsTest {
     }
 
     @Test
+    public void testCharAtIdxOutOfRange2() {
+        assertThrows(IndexOutOfBoundsException.class, () ->{
+            str1.charAt(INITIAL.length());
+        });
+    }
+
+
+    @Test
     public void testCharAt() {
         assertEquals('H', str1.charAt(0));
+    }
+
+    @Test
+    public void testCharAt2() {
+        assertEquals('e', str1.charAt(1));
     }
 
 
     @Test
     public void testDeleteCharAtNegativeIdx() {
-        assertThrows(IndexOutOfBoundsException.class, () ->{
+        assertThrows(StringIndexOutOfBoundsException.class, () ->{
             str1.deleteCharAt(-1);
         });
     }
 
+
+
     @Test
     public void testDeleteCharAtIdxOutOfRange() {
-        assertThrows(IndexOutOfBoundsException.class, () ->{
+        assertThrows(StringIndexOutOfBoundsException.class, () ->{
             str1.deleteCharAt(100);
         });
     }
 
     @Test
+    public void testDeleteCharAtIdxOutOfRange2() {
+        assertThrows(StringIndexOutOfBoundsException.class, () ->{
+            str1.deleteCharAt(INITIAL.length());
+        });
+    }
+    @Test
     public void testDeleteCharAt() {
         assertEquals("ello World", str1.deleteCharAt(0).toString());
+    }
+
+    @Test
+    public void testDeleteCharAt2() {
+        assertEquals("Helo World", str1.deleteCharAt(2).toString());
     }
 
 
@@ -72,10 +98,10 @@ public class StringUtilsTest {
         assertEquals("dlroW olleH", str1.reverse().toString());
     }
 
-    @Test
-    public void failTest() {
-        fail();
-    }
+//    @Test
+//    public void failTest() {
+//        fail();
+//    }
 
 
 }
