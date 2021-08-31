@@ -30,10 +30,17 @@ pipeline {
                                                                 exclusionPattern: 'src/test*'
                                                           ])
 
-                                                          step([$class: 'PitPublisher',
-                                                                 killRatioMustImprove: false,
-                                                                  minimumKillRatio: 50.0,
-                                                                   mutationStatsFile: '**/target/pit-reports/**/mutations.xml'])
+
+                                                                       publishHTML([
+                                                                                 allowMissing          : false,
+                                                                                 alwaysLinkToLastBuild : false,
+                                                                                 keepAll               : true,
+                                                                                 reportDir             : '**/target/pit-reports/**/index.html',
+                                                                                 reportFiles           : 'index.html',
+                                                                                 reportTitles          : "API Documentation",
+                                                                                 reportName            : "API Documentation"
+                                                                             ])
+
 
                       }
                   }
