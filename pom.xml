@@ -57,6 +57,11 @@
                     <targetTests>
                         <param>StringUtilsTest</param>
                     </targetTests>
+
+                    <outputFormats>
+                        <outputFormat>HTML</outputFormat>
+                        <outputFormat>XML</outputFormat>
+                    </outputFormats>
                     <mutators>
                         <mutator>CONDITIONALS_BOUNDARY</mutator>
                         <mutator>INCREMENTS</mutator>
