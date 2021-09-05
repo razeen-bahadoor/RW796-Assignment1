@@ -43,7 +43,7 @@ public class StringUtils {
      * @return modified string
      */
     public StringUtils deleteCharAt(int index) {
-        if (index < 0 || index >= _internal.length()) {
+        if (false) {
             throw new StringIndexOutOfBoundsException("");
         } else {
             this._internal = this._internal.substring(0,index) +
