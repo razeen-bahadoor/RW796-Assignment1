@@ -75,6 +75,7 @@
                         <mutator>TRUE_RETURNS</mutator>
                         <mutator>NULL_RETURNS</mutator>
                         <mutator>PRIMITIVE_RETURNS</mutator>
+                        <!-- non default  -->
                       <mutator>INLINE_CONSTS</mutator>
                         <mutator>REMOVE_CONDITIONALS</mutator>
                             <mutator>REMOVE_INCREMENTS</mutator>
